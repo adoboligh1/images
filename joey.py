@@ -94,7 +94,7 @@ def help_check_user(chat_id, date = None):
 	):
 		bot.send_message(
 			chat_id = chat_id,
-			text = "BOT IS UNDER MAINTENANCE"
+			text = "Bot Under Maintenance"
 		)
 
 		to_ban.add_chat_ids(chat_id)
@@ -131,7 +131,7 @@ def help_download(link, chat_id):
 		return
 
 	if not is_supported_link(link):
-		text = "THIS LINK IS NOT SUPPORTED :("
+		text = "Sorry, Unsupported Link."
 
 		bot.send_message(
 			chat_id = chat_id,
@@ -321,7 +321,7 @@ def audio_handler(update: Update, context):
 	if audio_size > recorded_file_max_size:
 		bot.send_message(
 			chat_id = chat_id,
-			text = f"PLEASE SEND A FILE AUDIO/RECORD LOWER THAN {recorded_file_max_size} MB =)"
+			text = f"Hmm, send me an audio file lower than {recorded_file_max_size} Megabytes.."
 		)
 
 		return
@@ -343,7 +343,7 @@ def audio_handler(update: Update, context):
 	if not resp:
 		bot.send_message(
 			chat_id = chat_id,
-			text = "I CANNOT SHAZAM THE SONG RETRY :("
+			text = "I didn't quite get that, try again ;)"
 		)
 
 		return
@@ -386,7 +386,7 @@ def start_command(update: Update, context):
 
 	bot.send_message(
 		chat_id = chat_id,
-		text = "YOU JUST PRESSED START YOU WON A NICE DAY :)))",
+		text = "Welcome to Telegram's fastest music downloader, Use any of the methods below.",
 		reply_markup = create_keyboad_search("")
 	)
 
